@@ -38,3 +38,6 @@ class CallbackModule(CallbackModule_default):
     def v2_playbook_on_task_start(self, task, is_conditional):
         if task.get_name() != 'include':
             super(CallbackModule, self).v2_playbook_on_task_start(task, is_conditional)
+
+    def v2_playbook_on_include(self, included_file):
+        pass

@@ -14,7 +14,6 @@ PLAY ***************************************************************************
 
 TASK [setup] *******************************************************************
 ok: [localhost]
-included: /home/hnakamur/ghq/github.com/hnakamur/ansible-callback-plugin-example/included.yml for localhost
 
 TASK [debug] *******************************************************************
 ok: [localhost] => {
