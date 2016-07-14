@@ -32,6 +32,9 @@ class CallbackModule(CallbackModule_default):
     CALLBACK_TYPE = 'stdout'
     CALLBACK_NAME = 'skip_task_include_on_task_start'
 
+    def __init__(self):
+        super(CallbackModule, self).__init__()
+
     def v2_playbook_on_task_start(self, task, is_conditional):
-        if task != 'TASK: include':
-            super.v2_playbook_on_task_start(task, is_conditional)
+        if task.get_name() != 'include':
+            super(CallbackModule, self).v2_playbook_on_task_start(task, is_conditional)
